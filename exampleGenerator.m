@@ -52,13 +52,13 @@ function dtw = exampleGenerator(midifile, audiofile, numNotes,stateOrd,noteNum,m
 learnparams=0;
 
 % run the alignment
-[allstate,selectstate,spec,yinres,dtw]=runAlignment(audiofile, midifile, numNotes, stateOrd, noteNum, means, covars, learnparams,width,targetsr,nharm,winms);
+[allstate,selectstate,spec,yinres,dtw]=runAlignmentExampleGen(audiofile, midifile, numNotes, stateOrd, noteNum, means, covars, learnparams,width,targetsr,nharm,winms);
 
 % visualise the alignment
-alignmentVisualiser(selectstate,midifile,spec,1);
+% alignmentVisualiser(selectstate,midifile,spec,1);
 
 % get onset and offset times
-times=getOnsOffs(selectstate);
+% times=getOnsOffs(selectstate);
 
 % write the onset and offset times to an audacity-readable file
 %dlmwrite('example.txt',[times.ons' times.offs'], 'delimiter', '\t');

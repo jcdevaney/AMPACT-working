@@ -34,9 +34,17 @@ function [align,spec,dtw] = runDTWAlignment(audiofile, midorig, tres,width,targe
 % (c) copyright 2011 Johanna Devaney (j@devaney.ca), all rights reserved.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-if nargin < 5
-  tres = 0.025;
-end
+
+
+if ~exist('tres', 'var'),  tres = 0.025; end
+
+if ~exist('width', 'var'),   width = 1; end
+
+if ~exist('targetsr', 'var'),   targetsr = 2000; end
+    
+if ~exist('nharm', 'var'), nharm = 4;  end
+
+if ~exist('winms', 'var'), winms = 100; end
 
 mid = midorig;
 

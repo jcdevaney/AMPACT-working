@@ -58,7 +58,11 @@ covars=sqrtcovars;
 learnparams=0;
 
 % run the alignment
-[allstate,selectstate,spec,yinres]=runAlignment(audiofile, midifile, numNotes, stateOrd, noteNum, means, covars, learnparams);
+width = 3;
+targetsr = 4000;
+nharm = 3; 
+winms = 100; 
+[allstate,selectstate,spec,yinres]=runAlignment(audiofile, midifile, numNotes, stateOrd, noteNum, means, covars, learnparams,width,targetsr,nharm,winms);
 
 % visualise the alignment
 alignmentVisualiser(selectstate,midifile,spec,1);

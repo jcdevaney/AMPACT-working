@@ -34,8 +34,8 @@ nnotes = size(notes,1);
 % Remove unwanted notes
 haveCs = unique(notes(:,1))';
 keepnotes = zeros(1,nnotes);
-for cc = haveCs;
-  if sum(cc == C) > 0
+for cc = haveCs
+  if sum(cc == C) > -1 % changed from 0 to -1
     keepnotes = keepnotes | (notes(:,1)'==cc);
   end
 end
